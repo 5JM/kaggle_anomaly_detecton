@@ -12,7 +12,7 @@ class Network(LightningModule):
     def __init__(self, model, lr, train_loss, valid_loss): # yml 사용할 파라미터를 선언
         super(Network, self).__init__()
         self.save_hyperparameters(ignore="model")
-        self.model = timm.create_model(model, pretrained=True, num_classes=88)
+        self.model = timm.create_model(model, drop_path_rate=0.1, drop_rate=0.2, pretrained=True, num_classes=88)
         self.lr = lr
         if train_loss == 'crossE':
             self.train_loss = CrossEntropyLoss()

@@ -23,7 +23,7 @@ trainer:
   check_val_every_n_epoch: 1
   fast_dev_run: false
   accumulate_grad_batches: null
-  max_epochs: 100
+  max_epochs: 50
   min_epochs: null
   max_steps: -1
   min_steps: null
@@ -61,10 +61,10 @@ trainer:
   stochastic_weight_avg: false
   terminate_on_nan: null
 model:
-  model: efficientnet_b0
+  model: regnetz_e8
   lr: 0.0001
   train_loss: crossE
   valid_loss: crossE
 data:
-  batch_size: 8
+  batch_size: 12
   test: false

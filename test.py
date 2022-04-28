@@ -14,7 +14,7 @@ if __name__ == '__main__':
         Network, DataModule, seed_everything_default=42, save_config_overwrite=True, run=False
     )
 
-    preds = cli.trainer.predict(cli.model, datamodule= cli.datamodule, ckpt_path = 'checkpoints/epoch=13-step=5992.ckpt')
+    preds = cli.trainer.predict(cli.model, datamodule=cli.datamodule, ckpt_path='checkpoints/epoch=49-step=25100.ckpt')
 
     img = list(itertools.chain(*[list(pred[0]) for pred in preds]))
     preds = torch.cat([pred[1] for pred in preds], dim = 0)
